@@ -1,0 +1,5 @@
+﻿{
+    "connectionString": "mongodb://kbmanikanta:bala13422@ds143388.mlab.com:43388/admincms",
+    "apiUrl": "http://localhost:4000",
+    "secret": "manikanta"
+}
