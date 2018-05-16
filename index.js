@@ -1,4 +1,4 @@
-﻿require('rootpath')();
+require('rootpath')();
 var express = require('express');
 var app = express();
 var cors = require('cors');
@@ -8,6 +8,7 @@ var config = require('config.json');
 require('dotenv').config();
 var azure = require('azure-storage');
 app.use(cors());
+app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -39,8 +40,7 @@ app.use(function (err, req, res, next) {
 });
 
 // start server
-var port = 80;
-var server = app.listen(port, function () {
-    console.log('Server listening on port ' + port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 
